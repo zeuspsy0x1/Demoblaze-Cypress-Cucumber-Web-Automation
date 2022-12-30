@@ -3,9 +3,10 @@ import HomePage from "../../../support/pages/homepage";
 const homepage = new HomePage()
 
 Given('User is on the demoblaze home page', () => {
-    cy.visit('https://www.demoblaze.com/')
+    cy.fixture('generalData').then((generalData) => {
+    cy.visit(generalData.url)
     }
-)
+)})
 
 Then('carousel element is shown on the home page', () => {
     homepage.getCarousel().should('be.visible')

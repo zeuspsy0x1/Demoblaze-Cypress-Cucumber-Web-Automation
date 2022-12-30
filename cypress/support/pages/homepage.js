@@ -2,10 +2,11 @@ let homepageLocators = {
     carousel: '.carousel-inner',
     carouselItemsCount: '.carousel-inner > .carousel-item',
     carouselItems: '.d-block',
-    previousButton: '.carousel-control-prev',
-    nextButton: '.carousel-control-next',
     firstImageOfTheCarousel: '.carousel-item:first-child',
     lastImageOfTheCarousel: '.carousel-item:last-child',
+    
+    previousButton: '.carousel-control-prev',
+    nextButton: '.carousel-control-next',
 }
 
 class HomePage {
