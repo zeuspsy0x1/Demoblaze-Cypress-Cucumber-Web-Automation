@@ -1,5 +1,5 @@
 export function hasClass(element, className) {
-    return element.should('have.class', className);
+    return element.classList.contains(className);
 }
 
 export function doesntHasClass(element, className) {
