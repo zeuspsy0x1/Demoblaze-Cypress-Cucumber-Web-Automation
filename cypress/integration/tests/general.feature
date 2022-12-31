@@ -42,7 +42,7 @@ Scenario: When user is on the cart page and has a product on the cart, the user 
     And User clicks on the add to cart button
     And The product is added to the cart
     When The user clicks delete from the cart
-    Then The product is deleted from the it
+    Then The product is deleted from it
 
     @generalTests @regression
 Scenario: When user is on the cart and has a product on it, the user should be able to place an order and buy it

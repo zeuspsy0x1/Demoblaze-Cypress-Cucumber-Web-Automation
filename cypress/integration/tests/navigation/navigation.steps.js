@@ -1,5 +1,6 @@
 import { Given, When, Then, And } from "cypress-cucumber-preprocessor/steps";
-import Navigation from "../../../support/modals/navigation";
+
+import Navigation from "../../../support/modalsForPageStructure/navigation";
 const navigation = new Navigation()
 import Homepage from "../../../support/pages/homepage";
 const homepage = new Homepage()

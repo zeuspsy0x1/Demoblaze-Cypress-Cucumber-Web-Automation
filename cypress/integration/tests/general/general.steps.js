@@ -66,34 +66,36 @@ When('User clicks on the add to cart button', () => {
 Then('The product is added to the cart', () => {
     navigation.getCart().should('be.visible')
     navigation.clickCart()
-    cy.get('#tbodyid').should('contain', 'Sony vaio i5')
+    generalPages.getCardBody().should('contain', 'Sony vaio i5')
     }
 )
 
 When('The user clicks delete from the cart', () => {
-    cy.get('#tbodyid').find('a').click()
+    generalPages.getCardBody().find('a').click()
     }
 )
 
-Then('The product is deleted from the it', () => {
-    cy.get('#tbodyid').should('not.contain', 'Sony vaio i5')
+Then('The product is deleted from it', () => {
+    generalPages.getCardBody().should('not.contain', 'Sony vaio i5')
     }
 )
 
 And('User tries to buy the product', () => {
     navigation.clickCart()
     generalPages.getPlaceOrder().should('be.visible').click()
-    cy.get('#name').type('Test')
-    cy.get('#country').type('Test')
-    cy.get('#city').type('Test')
-    cy.get('#card').type('1234567890123456')
-    cy.get('#month').type('12')
-    cy.get('#year').type('2021')
-    cy.get('button').contains('Purchase').click()
+    generalPages.getInputName().type('Test')
+    generalPages.getInputCountry().type('Test')
+    generalPages.getInputCity().type('Test')
+    generalPages.getInputCard().type('1234567890123456')
+    generalPages.getInputMonth().type('12')
+    generalPages.getInputYear().type('2021')
+    generalPages.getPurchaseBtn().click()
     }
 )
 
 Then('The purchase should be successful',() => {
     generalPages.getPurchaseSweetAlert().should('be.visible')
 })
+
+
 
